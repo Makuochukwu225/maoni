@@ -7,7 +7,7 @@ export default function TabTwoScreen() {
         </View>
     );
 
-  
+
 }
 
 const styles = StyleSheet.create({

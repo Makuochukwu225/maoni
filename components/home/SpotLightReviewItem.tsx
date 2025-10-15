@@ -161,6 +161,7 @@ export default function SpotLightReviewItem({item}: { item: SpotLightProp }) {
     const isNotHelpful = useAppSelector(selectIsNotHelpful(firstReviewId));
     const isReported = useAppSelector(selectIsReported(firstReviewId));
 
+
     const handleHelpful = () => {
         if (firstReviewId) {
             dispatch(toggleHelpful(firstReviewId));
@@ -301,13 +302,13 @@ export default function SpotLightReviewItem({item}: { item: SpotLightProp }) {
             <View style={styles.actionsContainer}>
                 <CallToAction
                     icon={<ThumbUpIcon color={isHelpful ? colors.text : colors.grey}/>}
-                    title={item.likeCount as unknown as string}
+                    title={item.customerReviews.map(e => e.helpfulCount) as unknown as string}
                     onPress={handleHelpful}
                     isActive={isHelpful}
                 />
                 <CallToAction
                     icon={<ThumbDownIcon color={isNotHelpful ? colors.text : colors.grey}/>}
-                    title={item.unLikeCount as unknown as string}
+                    title={item.customerReviews.map(e => e.notHelpfulCount) as unknown as string}
                     onPress={handleNotHelpful}
                     isActive={isNotHelpful}
                 />

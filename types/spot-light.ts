@@ -8,6 +8,14 @@ export interface CustomerReview {
     review: string;
     timestamp: string;
     image: ImageSourcePropType[];
+    helpfulCount: number;
+    notHelpfulCount: number;
+}
+
+
+export interface SpotLightWithCounts extends SpotLightProp {
+    helpfulCount: number;
+    notHelpfulCount: number;
 }
 
 export interface SpotLightProp {
@@ -19,6 +27,5 @@ export interface SpotLightProp {
     rating: number;
     reviews: string;
     customerReviews: CustomerReview[];
-    likeCount: number;
-    unLikeCount: number;
+
 }

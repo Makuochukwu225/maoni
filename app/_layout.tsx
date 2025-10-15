@@ -25,6 +25,7 @@ export default function RootLayout() {
         'Inter-Italic': require('./../assets/fonts/Inter_18pt-Italic.ttf'),
     });
 
+
     if (!fontsLoaded) return null;
 
     return (
